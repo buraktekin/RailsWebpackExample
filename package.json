@@ -1,0 +1,12 @@
+{
+  "name": "RailsWebpackExample",
+  "version": "1.0.0",
+  "description": "A rails application which uses yarn package manager to manage better js plugins and packages.",
+  "main": "index.js",
+  "author": "Burak Tekin",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
+}
