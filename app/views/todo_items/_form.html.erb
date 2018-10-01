@@ -1,4 +1,6 @@
 <%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
-    <%= f.text_field :content, placeholder: "New ToDo" %>
-    <%= f.submit %>
+    <div class="form-add-item">
+        <%= f.text_field :content, placeholder: "New ToDo", class: "form-control" %>
+        <%= f.submit "Create a new Item", class: 'form-control btn btn-md btn-success' %>
+    </div>
 <%- end -%>

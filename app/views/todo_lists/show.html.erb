@@ -1,21 +1,44 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <div class="navbar-brand">
+      <h1><%= @todo_list.title %></h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigate" aria-controls="navigate" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navigate">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Back', todo_lists_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @todo_list.description %>
-</p>
-
-<div id="todo_items_wrapper">
-  <%= render @todo_list.todo_items %>
-  <div id="form">
-    <%= render "todo_items/form" %>
+<div class="row">
+  <div class="container">
+    <h4 class="text-muted">Description:</h4>
+    <p><%= @todo_list.description %></p>
   </div>
 </div>
 
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+<hr/>
+
+<div class="row">
+  <div class="container">
+    <div id="todo_items_wrapper"> 
+      <ul class="list-group">
+        <%= render @todo_list.todo_items %>
+      </ul>
+      <div class="new-item-form">
+        <%= render "todo_items/form" %>
+      </div>
+    </div>
+  </div>
+</div>
