@@ -1,3 +1,5 @@
+![Alt text](https://github.com/buraktekin/RailsWebpackExample/blob/master/ss.png "Optional title")
+
 # README
 
 This README would normally document whatever steps are necessary to get the
