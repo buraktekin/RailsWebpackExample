@@ -3,18 +3,11 @@
     <div class="navbar-brand">
       <h1><%= @todo_list.title %></h1>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigate" aria-controls="navigate" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navigate">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Back', todo_lists_path, class: "nav-link" %>
-        </li>
-      </ul>
+    <div class="navbar navbar-nav" id="navigate">
+      <div class="btn-group">
+        <%= link_to 'Back', todo_lists_path, class: "btn btn-outline-warning text-white" %>
+        <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "btn btn-outline-warning" %>
+      </div>
     </div>
   </div>
 </nav>
@@ -30,15 +23,36 @@
 
 <hr/>
 
-<div class="row">
-  <div class="container">
-    <div id="todo_items_wrapper"> 
-      <ul class="list-group">
-        <%= render @todo_list.todo_items %>
+<div class="container">
+  <div class="row">
+    <div class="todo_items_wrapper"> 
+      <ul class="list-group list-group-flush">
+        <% @todo_list.todo_items.each do |todo_item| %>
+          <li class="list-group-item">
+            <div class="todos">
+              <p class="<%= todo_item.completed? ? 'item_completed' : 'item' %>"><%= todo_item.content %></p>
+              <ul class="list-unstyled">
+                <li>
+                  <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+                    <button class="btn btn-sm">
+                      <i class="fa <%= todo_item.completed? ? 'fa-check-square':'fa-square-full'%> text-primary"></i>
+                    </button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id),
+                              method: :delete, data: { confirm: "Are you sure?" } do %>
+                              <button class="btn btn-sm"><i class="fa fa-times text-danger"></i></button>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </li>
+        <% end %>
       </ul>
-      <div class="new-item-form">
-        <%= render "todo_items/form" %>
-      </div>
+    </div>
+    <div class="new-item-form">
+      <%= render "todo_items/form" %>
     </div>
   </div>
 </div>

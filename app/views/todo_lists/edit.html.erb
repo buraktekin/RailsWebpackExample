@@ -1,6 +1,6 @@
+<div class="btn-group mb-5">
+    <%= link_to 'Back', todo_lists_path, class:"btn btn-md btn-outline-danger" %>
+    <%= link_to 'Show', @todo_list, class:"btn btn-md btn-outline-warning" %>
+</div>
 <h1>Editing Todo List</h1>
-
 <%= render 'form', todo_list: @todo_list %>
-
-<%= link_to 'Show', @todo_list %> |
-<%= link_to 'Back', todo_lists_path %>

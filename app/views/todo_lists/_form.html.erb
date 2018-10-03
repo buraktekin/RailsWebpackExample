@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <fieldset class="field">
+    <legend><h6><%= :title %></h6></legend>
+    <%= f.text_field :title, class: "form-control" %>
+  </fieldset>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <fieldset class="field">
+    <legend><h6><%= :description %></h6></legend>
+    <%= f.text_area :description, class: "form-control" %>
+  </fieldset>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset class="actions">
+    <%= f.submit "Create", class: "form-control btn btn-submit btn-primary" %>
+  </fieldset>
 <% end %>
