@@ -5,6 +5,8 @@
     <h1>Todo Lists</h1>
   </div>
   
+  <!-- Card View -->
+  <legend>Card View</legend>
   <div class="page-body">
     <% @todo_lists.each do |todo_list| %>
       <div class="card" style="width: 18rem;">
@@ -30,9 +32,50 @@
     <% end %>
   </div>
 
+  <hr />
+
+  <!-- Table View -->
+  <legend>Table View</legend>
+  <div class="page-body-table">
+    <table id="example" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @todo_lists.each do |todo_list| %>
+          <tr>
+              <td><%= todo_list.id %></td>
+              <td><%= todo_list.title %></td>
+              <td><%= truncate(todo_list.description, length: 100) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Description</th>
+          </tr>
+      </tfoot>
+    </table>
+  </div>
+
   <div class="page-footer">
     <div class="text-center mt-5">
-      <%= link_to 'New Todo List', new_todo_list_path, class: "btn btn-lg btn-success text-white" %>
+      <%= link_to new_todo_list_path, class: "btn btn-lg btn-float-right btn-success text-white" do %>
+        <i class="fa fa-plus fa-2x"></i>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+  } );
+</script>

@@ -1,0 +1,5 @@
+@import "bootstrap/dist/css/bootstrap";
+.dataTables_wrapper .dataTables_filter input {
+    @extend .form-control;
+    height: 25px;
+}
