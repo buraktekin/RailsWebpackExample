@@ -1,0 +1,56 @@
+body, p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    //font-family: 'Poppins', sans-serif;
+    //font-family: 'Quicksand', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+legend {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .15);
+    margin-bottom: 15px;
+}
+
+fieldset.field {
+    margin-top: 15px;
+}
+
+// MAIN CONTAINERS IN APP
+.page {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px;
+    justify-content: center;
+    &-body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        align-self: baseline;
+    }
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    width: 75vw;
+    height: calc(100vh - 100px);
+}
+// END OF CONTAINERS
+
+
+// CARDS
+.card-footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-items: center;
+}
+// END OF CARDS
+
+// IMAGES
+.img-page-referrer {
+    margin: 0 auto;
+    max-width: 150px;
+}
+// END OF IMAGES

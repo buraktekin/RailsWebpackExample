@@ -6,9 +6,9 @@ body {
     margin-top: 100px !important;
 }
 
-.item {
+p.item {
     font-size: 1rem;
-    &_completed p {
+    &_completed {
         text-decoration: line-through;
         color: #dfdfdf;
     }
@@ -20,6 +20,8 @@ body {
     width: 100%;
     .form-add-item {
         display: grid;
-        grid-template-columns: 80% 20%;
+        grid-template-columns: 70% 30%;
+        align-items: center;
+        justify-items: center;
     }
 }

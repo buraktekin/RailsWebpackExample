@@ -4,3 +4,19 @@
 .navbar {
     padding: 5px 0 !important;
 }
+
+.todo_items_wrapper {
+    width: 100%;
+}
+
+.todos {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-self: center;
+    p {
+        font-size: 2rem;
+    }
+    ul {
+        text-align: right;
+    }
+}
